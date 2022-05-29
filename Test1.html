@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+
+        *{
+            padding: 0;
+            margin: 0;
+            
+        }
+        form {
+            border: 2px solid black;
+            width: 800px;
+            padding-bottom: 40px;
+            margin-top: 100px;
+            margin-left: 24%;
+            margin-bottom: 100px;
+            font-size: 20px;
+            
+        }
+        td{
+          width: 50%;  
+          line-height: 4;
+          
+        }
+        .lb{
+            text-align: right;
+        }
+        
+        input{
+            padding-top: 10px;
+            height: 29px;
+            width: 380px;
+            border: none;
+            background-color: rgba(204, 203, 203, 0.5);
+            margin-left: 5px;
+        }
+        .btn{
+            padding: 10px 30px;
+            color: black;
+            background-color: rgb(30, 168, 242);
+            margin-left: 5px;
+            border: none;
+            font-size: 18px;
+        }
+        .btn1{
+            margin-left: 268px;
+        }
+        .btn2{
+            padding: 10px 80px;
+        }
+    </style>
+    <script>
+        function val() {
+            var correct_way = /^[A-za-z]+0$/;
+            var f = document.getElementsByClassName("f").value;
+            var f1 = document.getElementsByClassName("f1").value;
+            var f2 = document.getElementsByClassName("f2").value;
+            var f3 = document.getElementsByClassName("f3").value;
+            var f4 = document.getElementsByClassName("f4").value;
+            var f5 = document.getElementsByClassName("f5").value;
+            if((frm.field.value).length < 5){
+                alert("Enter minimum 5 character or number");
+                frm.field.focus();
+                return false;
+            }
+            if((frm.field1.value).length < 5){
+                alert("Enter minimum 5 character or number");
+                frm.field1.focus();
+                return false;
+            }
+            if((frm.field2.value).length < 5){
+                alert("Enter minimum 5 character or number");
+                frm.field2.focus();
+                return false;
+            }
+            if((frm.field3.value).length < 5){
+                alert("Enter minimum 5 character or number");
+                frm.field3.focus();
+                return false;
+            }
+            if((frm.field4.value).length < 5){
+                alert("Enter minimum 5 character or number");
+                frm.field4.focus();
+                return false;
+            }
+            if((frm.field5.value).length < 5){
+                alert("Enter minimum 5 character or number");
+                frm.field5.focus();
+                return false;
+            }
+            if(f==correct_way)
+                return true;
+            else{
+                alert("Enter only alphabets");
+                frm.field.focus();
+                return false
+            }
+            if(f1==correct_way)
+                return true;
+            else{
+                alert("Enter only alphabets");
+                frm.field1.focus();
+                return false
+            }
+            // if((frm.field2.value).match(correct_way))
+            //     return true;
+            // else{
+            //     alert("Enter only alphabets");
+            //     frm.field2.focus();
+            //     return false
+            // }
+            // if((frm.field3.value).match(correct_way))
+            //     return true;
+            // else{
+            //     alert("Enter only alphabets");
+            //     frm.field3.focus();
+            //     return false
+            // }
+            // if((frm.field4.value).match(correct_way))
+            //     return true;
+            // else{
+            //     alert("Enter only alphabets");
+            //     frm.field4.focus();
+            //     return false
+            // }
+            // if((frm.field5.value).match(correct_way))
+            //     return true;
+            // else{
+            //     alert("Enter only alphabets");
+            //     frm.field5.focus();
+            //     return false
+            // }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="frm" action="#">
+        <table>
+        <tr>
+            <td class="lb"><label>Select your source :</label></td>
+            <td class="lb">Google Cloud Storage</td>
+        </tr>
+        <tr>
+            <td class="lb"><label>Provide a name for pipeline :</label></td>
+            <td><input type="text" class="f" name="field" placeholder="e.g., cust_shop_energy_gateway001"></td>
+        </tr>
+        <tr>
+            <td class="lb"><label>GCS project name :</label></td>
+            <td><input type="text" class="f"name="field1" placeholder="project-id"></td>
+        </tr>
+        <tr>
+            <td class="lb"><label>GCS bucket name :</label></td>
+            <td><input type="text" name="field2" placeholder="gs://your-bucket"></td>
+        </tr>
+        <tr>
+            <td class="lb"><label>Input Cloud Storage File(s) :</label></td>
+            <td><input type="text" name="field3" placeholder="GCS location of your files">
+        </tr>
+        <tr>
+            <td class="lb"><label>GCS credentials :</label></td>
+            <td><input type="text" name="field4" style="background-color:grey; width:360px"></td>
+        </tr>
+        <tr>
+            <td class="lb"><label>Run Every :</label></td>
+            <td><input type="text" name="field5" placeholder="(in minutes)"></td>
+        </tr>
+        </table>
+        <button class="btn btn1" type="submit" value="Create" onclick="return val();">Create</button>
+        <button class="btn btn2"type="submit" value="Cancle">Cancle</button>
+    </form>
+</body>
+</html>

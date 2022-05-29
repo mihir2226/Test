@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    th{ 
+        color:#fff;
+            }
+</style>
+</head>
+<body>
+    <h2>Equipment-wise Details</h2>
+    <table class="table table-striped">
+            <tr class="bg-info">
+                <th rowspan="2">MACHINE NAME</th>
+                <th rowspan="2">MACHINE ID</th>
+                <th colspan="3">ENERGY CONSUMED<br/>(kwh)</th>
+                <th rowspan="2">Active Power<br>(MW)</th>
+                <th rowspan="2">Apparent Power<br/>(MVA)</th>
+                <th rowspan="2">Reactive Power<br/>(MVAr)</th>
+                <th rowspan="2">CURRENT (Amps)</th>
+                <th rowspan="2">VOLTAGE (volts)</th>
+                <th rowspan="2">POWER FACTOR</th>
+                <th colspan="3">IDLE TIME</th>
+            </tr>
+            <tr class="bg-info">
+                <th>Today</th>
+                <th>MTD</th>
+                <th>YTD</th>
+                <th>Today</th>
+                <th>MTD</th>
+                <th>YTD</th>
+              </tr>
+        <tbody id="myTable">
+
+        </tbody>
+    </table>
+
+
+    <script>
+        var myArray = [
+            {'machine_name':'Auto Winding Machine', 'machine_id':'machine001', 'daily_energy':'0', 'monthly_energy':'0', 'yearly_energy':'0', 'active_power':'0.0', 'apparent_power':'0.0', 'reactive_power':'0.0', 'current':'0', 'voltage':'0', 'power_factor':'0', 'idle_daily':'0', 'idle_monthly':'0', 'idle_yearly':'0'
+        },
+            {'machine_name':'BoilerMachine', 'machine_id':'machine004', 'daily_energy':'0', 'monthly_energy':'0', 'yearly_energy':'0', 'active_power':'0.0', 'apparent_power':'0.0', 'reactive_power':'0.0', 'current':'0', 'voltage':'0', 'power_factor':'0', 'idle_daily':'0', 'idle_monthly':'0', 'idle_yearly':'0'
+        },
+        ]
+        
+        buildTable(myArray)
+    
+    
+    
+        function buildTable(data){
+            var table = document.getElementById('myTable')
+    
+            for (var i = 0; i < data.length; i++){
+                var row = `<tr>
+                                <td>${data[i].machine_name}</td>
+                                <td>${data[i].machine_id}</td>
+                                <td>${data[i].daily_energy}</td>
+                                <td>${data[i].monthly_energy}</td>
+                                <td>${data[i].yearly_energy}</td>
+                                <td>${data[i].active_power}</td>
+                                <td>${data[i].apparent_power}</td>
+                                <td>${data[i].reactive_power}</td>
+                                <td>${data[i].current}</td>
+                                <td>${data[i].voltage}</td>
+                                <td>${data[i].power_factor}</td>
+                                <td>${data[i].idle_daily}</td>
+                                <td>${data[i].idle_monthly}</td>
+                                <td>${data[i].idle_yearly}</td>
+                          </tr>`
+                table.innerHTML += row
+    
+    
+            }
+        }
+    
+    </script>
+</body>
+</html>
